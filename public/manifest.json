@@ -1,6 +1,6 @@
 {
-  "name": "Kitchen Assistant",
-  "short_name": "Kitchen",
+  "name": "Cooking Buddy",
+  "short_name": "Cooking Buddy",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#fbf9f5",

@@ -17,7 +17,7 @@ export function Header() {
         <a href="/" class="flex items-center gap-3 no-underline">
           <Icon name="restaurant_menu" class="text-primary" />
           <h1 class="font-headline text-2xl font-bold italic text-primary">
-            Kitchen Assistant
+            Cooking Buddy
           </h1>
         </a>
         <div class="flex items-center gap-6">
