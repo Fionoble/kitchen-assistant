@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+@theme {
+  --color-surface: #fbf9f5;
+  --color-surface-container: #efeeea;
+  --color-surface-container-low: #f5f3ef;
+  --color-surface-container-high: #eae8e4;
+  --color-surface-container-highest: #e4e2de;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-variant: #e4e2de;
+
+  --color-primary: #154212;
+  --color-primary-container: #2d5a27;
+  --color-on-primary: #ffffff;
+  --color-on-primary-container: #9dd090;
+
+  --color-secondary: #53643a;
+  --color-secondary-container: #d6eab5;
+  --color-on-secondary: #ffffff;
+  --color-on-secondary-container: #596a40;
+
+  --color-tertiary: #5d2c00;
+  --color-tertiary-container: #7f3f00;
+  --color-tertiary-fixed: #ffdcc5;
+  --color-tertiary-fixed-dim: #ffb783;
+  --color-on-tertiary: #ffffff;
+  --color-on-tertiary-container: #ffb27a;
+  --color-on-tertiary-fixed: #301400;
+
+  --color-on-surface: #1b1c1a;
+  --color-on-surface-variant: #42493e;
+  --color-on-background: #1b1c1a;
+
+  --color-outline: #72796e;
+  --color-outline-variant: #c2c9bb;
+
+  --color-error: #ba1a1a;
+  --color-error-container: #ffdad6;
+
+  --color-inverse-surface: #30312e;
+  --color-inverse-on-surface: #f2f0ed;
+  --color-inverse-primary: #a1d494;
+
+  --font-headline: "Noto Serif", serif;
+  --font-body: "Plus Jakarta Sans", sans-serif;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-surface);
+  color: var(--color-on-surface);
+  min-height: 100dvh;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+}
+
+.material-filled {
+  font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24;
+}
+
+.btn-primary {
+  background: linear-gradient(145deg, #154212 0%, #2d5a27 100%);
+  box-shadow: 0px 12px 32px rgba(21, 66, 18, 0.15);
+}
+
+.editorial-shadow {
+  box-shadow: 0px 12px 32px rgba(21, 66, 18, 0.08);
+}
+
+.recipe-card-gradient {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.6) 100%);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AI Chef Chat - The Digital Epicurean</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,700;1,700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-error": "#ffffff",
+                    "on-tertiary-fixed": "#301400",
+                    "secondary-container": "#d6eab5",
+                    "on-tertiary-container": "#ffb27a",
+                    "inverse-surface": "#30312e",
+                    "on-surface": "#1b1c1a",
+                    "tertiary": "#5d2c00",
+                    "on-secondary-container": "#596a40",
+                    "surface-container-highest": "#e4e2de",
+                    "surface-variant": "#e4e2de",
+                    "primary": "#154212",
+                    "secondary": "#53643a",
+                    "background": "#fbf9f5",
+                    "error": "#ba1a1a",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-fixed": "#121f01",
+                    "on-primary": "#ffffff",
+                    "primary-fixed-dim": "#a1d494",
+                    "tertiary-fixed": "#ffdcc5",
+                    "surface-tint": "#3b6934",
+                    "tertiary-container": "#7f3f00",
+                    "primary-container": "#2d5a27",
+                    "tertiary-fixed-dim": "#ffb783",
+                    "on-primary-fixed": "#002201",
+                    "on-tertiary-fixed-variant": "#713700",
+                    "surface": "#fbf9f5",
+                    "on-background": "#1b1c1a",
+                    "outline-variant": "#c2c9bb",
+                    "error-container": "#ffdad6",
+                    "on-secondary": "#ffffff",
+                    "surface-container-low": "#f5f3ef",
+                    "surface-bright": "#fbf9f5",
+                    "inverse-on-surface": "#f2f0ed",
+                    "secondary-fixed-dim": "#bacd9b",
+                    "surface-dim": "#dbdad6",
+                    "on-tertiary": "#ffffff",
+                    "on-surface-variant": "#42493e",
+                    "secondary-fixed": "#d6eab5",
+                    "inverse-primary": "#a1d494",
+                    "on-secondary-fixed-variant": "#3c4c25",
+                    "on-primary-container": "#9dd090",
+                    "surface-container": "#efeeea",
+                    "outline": "#72796e",
+                    "on-error-container": "#93000a",
+                    "primary-fixed": "#bcf0ae",
+                    "surface-container-high": "#eae8e4",
+                    "on-primary-fixed-variant": "#23501e"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Noto Serif"],
+                    "body": ["Plus Jakarta Sans"],
+                    "label": ["Plus Jakarta Sans"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .ai-gradient-button {
+            background: linear-gradient(145deg, #154212 0%, #2d5a27 100%);
+        }
+        .glass-panel {
+            background: rgba(228, 226, 222, 0.15);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body text-on-surface min-h-screen flex flex-col">
+<!-- Top Navigation -->
+<header class="w-full top-0 sticky z-40 bg-[#fbf9f5] dark:bg-stone-950">
+<nav class="flex justify-between items-center px-6 py-4 max-w-screen-xl mx-auto">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-emerald-900 dark:text-emerald-500" data-icon="restaurant_menu">restaurant_menu</span>
+<h1 class="text-2xl font-bold italic text-emerald-900 dark:text-emerald-500 font-headline">The Digital Epicurean</h1>
+</div>
+<!-- Desktop Nav Cluster -->
+<div class="hidden md:flex items-center gap-8 font-label text-stone-600 dark:text-stone-400">
+<a class="hover:opacity-80 transition-opacity" href="#">Discover</a>
+<a class="hover:opacity-80 transition-opacity" href="#">Library</a>
+<a class="text-emerald-900 dark:text-emerald-400 font-bold active:scale-95 transition-transform" href="#">AI Chef</a>
+<a class="hover:opacity-80 transition-opacity" href="#">Feed</a>
+</div>
+<div class="flex items-center gap-4">
+<img alt="User Profile" class="w-10 h-10 rounded-full object-cover border-2 border-primary-container" data-alt="Professional headshot of a person with friendly expression in soft natural lighting for a profile icon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGyjDERcDpEwbh6J_EdF4u28yKCHUhcKE74ZpeWitx8q0nv1vSspBSQyYXoYYYMwx2bQLLutcC2bXExvfKmv1N1i1T259Jz94ZnJM4GgGt_3GYRFRGZDjG1RLUpF8t9EnA92qxl7XuGcv3dUWMCkfoT4e3dMKNv6SWI-pk-kFZXOrlLM1I54-xa4qHhjcAflDH05ZfkzgV6NYZFwPGpjxgMtto1ZLeMkP8vpxAU8rUuNHU1WTwywKM-GEL5R75Tqe06Occbh2OQm6F"/>
+</div>
+</nav>
+</header>
+<!-- Main Chat Canvas -->
+<main class="flex-grow flex flex-col max-w-3xl mx-auto w-full px-4 pt-6 pb-32">
+<!-- Welcome Header -->
+<div class="mb-8 text-center md:text-left">
+<h2 class="text-3xl font-headline font-bold text-primary mb-2">Gourmet Assistance</h2>
+<p class="text-on-surface-variant font-label max-w-lg">Your AI Sous Chef is ready. Ask for a technique, a wine pairing, or a complete dinner plan based on what's in your fridge.</p>
+</div>
+<!-- Chat History -->
+<div class="space-y-6">
+<!-- AI Message -->
+<div class="flex items-start gap-4">
+<div class="w-8 h-8 rounded-full ai-gradient-button flex items-center justify-center shrink-0 mt-1 shadow-[0px_4px_12px_rgba(21,66,18,0.15)]">
+<span class="material-symbols-outlined text-white text-[18px]" data-icon="auto_awesome" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</div>
+<div class="flex flex-col gap-2 max-w-[85%]">
+<div class="bg-surface-container-lowest p-5 rounded-2xl rounded-tl-none shadow-[0px_8px_24px_rgba(0,0,0,0.02)] border border-outline-variant/10">
+<p class="text-on-surface leading-relaxed">Good evening! I've been refining a few seasonal ideas today. Are we looking for something comforting for a quiet night, or perhaps a vibrant 30-minute masterpiece for guests?</p>
+</div>
+<span class="text-[11px] font-semibold text-on-surface-variant px-1">AI SOUS CHEF • 6:42 PM</span>
+</div>
+</div>
+<!-- User Message -->
+<div class="flex items-start gap-4 flex-row-reverse">
+<div class="w-8 h-8 rounded-full overflow-hidden shrink-0 mt-1">
+<img alt="User" data-alt="close up profile photo of a smiling man with blurred background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCswSorIZWufmHYVKzWsw6QAqSkLvCQ7PiQq2Ag0_phyOa8yk_0zlSVSmitvLmQ94BQihYBtQYTrBkQ01lR68YS8eLjLSAwDfYzjr_laY12U9Tuk5uVG3oWoutPOw1m9344E-yFCkPI_EWi3M8mvTrdnl0qXMGfQvC4zn3dpzaYAZIhOtvDqKnYCcaf3YuLqP-_UEn0cvK2kqWOmYW3t8dorPhhHhHNeUAkZCp7MJQNZzO9gfWvCMQh6nFnwtdsEgIckz9SCAOeAJhK"/>
+</div>
+<div class="flex flex-col items-end gap-2 max-w-[85%]">
+<div class="bg-primary-container text-on-primary-container p-5 rounded-2xl rounded-tr-none shadow-[0px_8px_24px_rgba(21,66,18,0.1)]">
+<p class="leading-relaxed">I have some chicken thighs and fresh rosemary. What's a healthy dinner for two I can make with those in under 40 minutes?</p>
+</div>
+<span class="text-[11px] font-semibold text-on-surface-variant px-1">YOU • 6:43 PM</span>
+</div>
+</div>
+<!-- AI Detailed Response with Glassmorphism Card -->
+<div class="flex items-start gap-4">
+<div class="w-8 h-8 rounded-full ai-gradient-button flex items-center justify-center shrink-0 mt-1 shadow-[0px_4px_12px_rgba(21,66,18,0.15)]">
+<span class="material-symbols-outlined text-white text-[18px]" data-icon="auto_awesome" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</div>
+<div class="flex flex-col gap-4 max-w-[90%]">
+<div class="bg-surface-container-lowest p-5 rounded-2xl rounded-tl-none shadow-[0px_8px_24px_rgba(0,0,0,0.02)] border border-outline-variant/10">
+<p class="text-on-surface leading-relaxed mb-4">Excellent choices. I suggest a **Skillet-Seared Rosemary Chicken with Root Vegetables**. It's elegant, utilizes one pan, and keeps the chicken incredibly juicy.</p>
+<!-- Recipe Recommendation Card -->
+<div class="relative group overflow-hidden rounded-xl bg-surface-container-low p-4 flex gap-4 transition-transform active:scale-95 duration-200">
+<div class="w-24 h-24 rounded-lg overflow-hidden shrink-0">
+<img alt="Roasted chicken" class="w-full h-full object-cover" data-alt="Close-up of golden brown roasted chicken thighs with fresh rosemary sprigs and charred lemons on a rustic plate" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_OknTh7zIlMyrCOX5HWHhFXkc8aA8OXiDG2Ob7pm6fGx5AP8_qttWgAHir2nH2QQiypNkQuyfCsEUsMfp7re61c-gLaHxPyfzMyWaxG0J5xOJ2oXfSpBHRePtsZm9Vd2vUnLE4SIcAOmR9Q_7A7xB4aMJhXF046IfWSwsaIuqP3vP1Cfb6HWUgUryKsYxAcs1UD0Y5LDt0hjNMLBP81oiLj7Ok-ZtbfrdD413lb2044BjMFAIa-cIyWYiqna9xk1JMY0eY2534qYi"/>
+</div>
+<div class="flex flex-col justify-center">
+<span class="text-[10px] uppercase tracking-widest font-bold text-tertiary-container mb-1">AI Recommendation</span>
+<h3 class="font-headline font-bold text-lg text-primary">Rosemary-Garlic Thighs</h3>
+<div class="flex items-center gap-3 mt-1 text-on-surface-variant font-label text-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]" data-icon="schedule">schedule</span> 35m</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]" data-icon="local_fire_department">local_fire_department</span> 420 kcal</span>
+</div>
+</div>
+<div class="absolute right-4 top-1/2 -translate-y-1/2">
+<span class="material-symbols-outlined text-primary" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Typing Indicator (Mock) -->
+<div class="flex items-center gap-2 px-12 opacity-40">
+<div class="w-1.5 h-1.5 rounded-full bg-primary animate-bounce"></div>
+<div class="w-1.5 h-1.5 rounded-full bg-primary animate-bounce delay-75"></div>
+<div class="w-1.5 h-1.5 rounded-full bg-primary animate-bounce delay-150"></div>
+<span class="text-[11px] font-bold font-label ml-2">CHEF IS BRAINSTORMING</span>
+</div>
+</div>
+<!-- Spacer for Scroll -->
+<div class="h-20"></div>
+</main>
+<!-- Bottom Action Area -->
+<div class="fixed bottom-0 left-0 w-full z-50">
+<!-- Smart Suggestions (Asymmetric Overlap) -->
+<div class="max-w-3xl mx-auto px-4 mb-4">
+<div class="flex gap-2 overflow-x-auto pb-2 no-scrollbar">
+<button class="shrink-0 px-4 py-2 bg-surface-container-lowest border border-outline-variant/20 rounded-full font-label text-sm text-primary font-semibold shadow-sm hover:bg-surface transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-tertiary" data-icon="restaurant" style="font-variation-settings: 'FILL' 1;">restaurant</span>
+                    Healthy dinner for two
+                </button>
+<button class="shrink-0 px-4 py-2 bg-surface-container-lowest border border-outline-variant/20 rounded-full font-label text-sm text-primary font-semibold shadow-sm hover:bg-surface transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-tertiary" data-icon="liquor" style="font-variation-settings: 'FILL' 1;">liquor</span>
+                    Wine pairing guide
+                </button>
+<button class="shrink-0 px-4 py-2 bg-surface-container-lowest border border-outline-variant/20 rounded-full font-label text-sm text-primary font-semibold shadow-sm hover:bg-surface transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-tertiary" data-icon="inventory_2" style="font-variation-settings: 'FILL' 1;">inventory_2</span>
+                    What can I make with chicken?
+                </button>
+</div>
+</div>
+<!-- Input Shell -->
+<div class="bg-white/80 dark:bg-stone-900/80 backdrop-blur-xl border-t border-outline-variant/10 px-6 py-6 pb-8 md:pb-10 shadow-[0px_-8px_40px_rgba(0,0,0,0.05)]">
+<div class="max-w-3xl mx-auto flex items-center gap-4">
+<button class="w-12 h-12 rounded-full bg-surface-container-low flex items-center justify-center text-primary hover:bg-surface-container-high transition-colors active:scale-90 duration-200">
+<span class="material-symbols-outlined" data-icon="mic">mic</span>
+</button>
+<div class="flex-grow relative">
+<input class="w-full bg-surface-container-low border-none rounded-2xl px-6 py-3.5 pr-12 focus:ring-2 focus:ring-primary/10 font-label text-on-surface placeholder:text-on-surface-variant/60" placeholder="Type a message or ingredient..." type="text"/>
+<button class="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined" data-icon="attach_file">attach_file</span>
+</button>
+</div>
+<button class="w-12 h-12 rounded-full ai-gradient-button flex items-center justify-center text-white shadow-lg active:scale-90 transition-transform duration-200">
+<span class="material-symbols-outlined" data-icon="send" style="font-variation-settings: 'FILL' 1;">send</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Bottom Nav (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-6 pt-3 bg-white/80 dark:bg-stone-900/80 backdrop-blur-md z-50 rounded-t-3xl shadow-[0px_-4px_20px_rgba(21,66,18,0.05)] border-t border-transparent">
+<a class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 px-5 py-2" href="#">
+<span class="material-symbols-outlined" data-icon="explore">explore</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[11px] font-semibold">Discover</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 px-5 py-2" href="#">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[11px] font-semibold">Library</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-emerald-100 dark:bg-emerald-900/40 text-emerald-900 dark:text-emerald-100 rounded-xl px-5 py-2 active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="auto_awesome" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[11px] font-semibold">AI Chef</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 px-5 py-2" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[11px] font-semibold">Feed</span>
+</a>
+</nav>
+<style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</body></html>

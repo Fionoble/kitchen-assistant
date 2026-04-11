@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Digital Epicurean - Braised Heirloom Carrots</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error": "#ffffff",
+                        "on-tertiary-fixed": "#301400",
+                        "secondary-container": "#d6eab5",
+                        "on-tertiary-container": "#ffb27a",
+                        "inverse-surface": "#30312e",
+                        "on-surface": "#1b1c1a",
+                        "tertiary": "#5d2c00",
+                        "on-secondary-container": "#596a40",
+                        "surface-container-highest": "#e4e2de",
+                        "surface-variant": "#e4e2de",
+                        "primary": "#154212",
+                        "secondary": "#53643a",
+                        "background": "#fbf9f5",
+                        "error": "#ba1a1a",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed": "#121f01",
+                        "on-primary": "#ffffff",
+                        "primary-fixed-dim": "#a1d494",
+                        "tertiary-fixed": "#ffdcc5",
+                        "surface-tint": "#3b6934",
+                        "tertiary-container": "#7f3f00",
+                        "primary-container": "#2d5a27",
+                        "tertiary-fixed-dim": "#ffb783",
+                        "on-primary-fixed": "#002201",
+                        "on-tertiary-fixed-variant": "#713700",
+                        "surface": "#fbf9f5",
+                        "on-background": "#1b1c1a",
+                        "outline-variant": "#c2c9bb",
+                        "error-container": "#ffdad6",
+                        "on-secondary": "#ffffff",
+                        "surface-container-low": "#f5f3ef",
+                        "surface-bright": "#fbf9f5",
+                        "inverse-on-surface": "#f2f0ed",
+                        "secondary-fixed-dim": "#bacd9b",
+                        "surface-dim": "#dbdad6",
+                        "on-tertiary": "#ffffff",
+                        "on-surface-variant": "#42493e",
+                        "secondary-fixed": "#d6eab5",
+                        "inverse-primary": "#a1d494",
+                        "on-secondary-fixed-variant": "#3c4c25",
+                        "on-primary-container": "#9dd090",
+                        "surface-container": "#efeeea",
+                        "outline": "#72796e",
+                        "on-error-container": "#93000a",
+                        "primary-fixed": "#bcf0ae",
+                        "surface-container-high": "#eae8e4",
+                        "on-primary-fixed-variant": "#23501e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Noto Serif"],
+                        "body": ["Plus Jakarta Sans"],
+                        "label": ["Plus Jakarta Sans"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .editorial-shadow {
+            box-shadow: 0px 12px 32px rgba(21, 66, 18, 0.08);
+        }
+        .glass-overlay {
+            background: rgba(228, 226, 222, 0.15);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background font-body text-on-surface">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky z-50 bg-[#fbf9f5] dark:bg-stone-950">
+<div class="flex justify-between items-center px-6 py-4 max-w-screen-xl mx-auto">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-emerald-900 dark:text-emerald-500" data-icon="restaurant_menu">restaurant_menu</span>
+<h1 class="font-['Noto_Serif'] text-2xl font-bold italic text-emerald-900 dark:text-emerald-500">The Digital Epicurean</h1>
+</div>
+<div class="flex items-center gap-6">
+<nav class="hidden md:flex gap-8 items-center">
+<a class="font-['Noto_Serif'] text-emerald-900 dark:text-emerald-400 font-bold hover:opacity-80 transition-opacity" href="#">Discover</a>
+<a class="font-['Noto_Serif'] text-stone-600 dark:text-stone-400 hover:opacity-80 transition-opacity" href="#">Library</a>
+<a class="font-['Noto_Serif'] text-stone-600 dark:text-stone-400 hover:opacity-80 transition-opacity" href="#">AI Chef</a>
+</nav>
+<div class="h-10 w-10 rounded-full overflow-hidden border-2 border-primary-container">
+<img alt="User profile" data-alt="close-up portrait of a friendly man with a warm smile in a brightly lit modern kitchen setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCa16NVl0n_sNaLTB1FzYg3JkkRSF7xFdN68LaSOYM9xW5BfE7X65Bs4Ys_iVsUYKnl1T9-fJvPyKVZU4mNWUefb5vwXTRxEv2LClrFpfgv7XoaWkroZJLky7jTCQQQJecdXQnJ0ODs2OQpcYrmV5vxUC3TGQ8UzsaNxaf0cej6tgElLEGUTKNVS5QcHrHvdrPt7uYggJPHeOSOSatEEQ2hsqog29wD4RLMDgq0pEh4evidRxJlvOmRsdE_SlE6NjWKKaLUY15ssDrx"/>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-screen-xl mx-auto pb-32">
+<!-- Hero Section: Asymmetric Editorial Layout -->
+<section class="relative px-6 pt-8 grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+<div class="md:col-span-7 z-10">
+<div class="flex items-center gap-2 mb-4 text-tertiary font-bold tracking-wider uppercase text-xs">
+<span class="material-symbols-outlined text-sm" data-icon="auto_awesome" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+                    AI Optimized Recipe
+                </div>
+<h2 class="font-headline text-5xl md:text-7xl font-bold text-primary leading-tight mb-6">
+                    Honey-Glazed <br/><span class="italic text-tertiary">Heirloom Carrots</span>
+</h2>
+<p class="text-on-surface-variant text-lg max-w-md leading-relaxed mb-8">
+                    An elevated take on earth's simple treasures. Slow-braised with star anise, wild honey, and finished with whipped goat cheese and toasted pistachios.
+                </p>
+<div class="flex flex-wrap gap-6 items-center">
+<div class="flex items-center gap-2 bg-surface-container-low px-4 py-2 rounded-full">
+<span class="material-symbols-outlined text-primary" data-icon="schedule">schedule</span>
+<span class="text-sm font-semibold">45 Mins</span>
+</div>
+<div class="flex items-center gap-2 bg-surface-container-low px-4 py-2 rounded-full">
+<span class="material-symbols-outlined text-primary" data-icon="restaurant">restaurant</span>
+<span class="text-sm font-semibold">Serves 4</span>
+</div>
+<div class="flex items-center gap-1 ml-2">
+<span class="material-symbols-outlined text-tertiary" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-tertiary" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-tertiary" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-tertiary" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-tertiary" data-icon="star_half">star_half</span>
+<span class="ml-2 text-sm font-bold">(128 Reviews)</span>
+</div>
+</div>
+</div>
+<div class="md:col-span-5 relative">
+<div class="relative rounded-[2.5rem] overflow-hidden editorial-shadow transform md:rotate-2 hover:rotate-0 transition-transform duration-500 aspect-[4/5]">
+<img alt="Braised carrots" class="w-full h-full object-cover" data-alt="rustic overhead shot of colorful roasted heirloom carrots on a ceramic plate with dollops of goat cheese and honey drizzle" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXMZ0odSq9nq91VdxhTZXPIHK2NldR0h5xqLxJwCTFys_v-ecS5n9pPplMAz76Q_lLIGvYuaea8vuCIhwL8JIDZ8GT74PntYTr0LxvSbI7uxN3s8TaDZ_WdagwK_1m-xNkNP3N4GWtomgiet3qX3FH2NzaBAK_umSEunmL0IderEDkqjRcLpCBJ0nS3WL3LMOq-4FEaxoPeY44howTbOBUiD9ou-8cVAw7_NvlRGelcowMJ1_2xV70xt3lgXHTZ3UUKc9kwFs9Kjie"/>
+</div>
+<!-- Floating Decorative Element -->
+<div class="absolute -bottom-6 -left-12 hidden md:block w-48 h-48 rounded-xl overflow-hidden editorial-shadow border-8 border-white transform -rotate-6">
+<img alt="Honey texture" class="w-full h-full object-cover" data-alt="macro close-up of golden viscous honey dripping slowly from a wooden dipper with soft lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBctp-Qydey2FPWqjiQQNenD8FbNyj6Nn8aebzlvVV75g2rdGgwQ6pe_NXvsKeuc0QtRAYPNGFJGiookTZ7s3qbSeTHHancur6QjnWSEuVnhClPhYElKdNhQROPwD2OhrrfuOvH14L8KqLZmLQn5lD76gjMhhmGpaDeKwz8QY8Ht3QiwuFJXYHGhZl0lyX4rKJD3rwbYXuV4HRq0IB1a57O1OK-DuHZT7we2Q5ZVYkZoiEvFTspLOnnlZirLelxj7zY3_ZwTTerL49n"/>
+</div>
+</div>
+</section>
+<!-- Social Share & Actions -->
+<section class="px-6 mt-16 flex flex-wrap justify-between items-center gap-6">
+<div class="flex items-center gap-4">
+<span class="font-bold text-sm text-on-surface-variant uppercase tracking-widest">Share to Social</span>
+<div class="flex gap-2">
+<button class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors duration-300">
+<span class="material-symbols-outlined" data-icon="photo_camera">photo_camera</span>
+</button>
+<button class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors duration-300">
+<span class="material-symbols-outlined" data-icon="video_library">video_library</span>
+</button>
+<button class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors duration-300">
+<span class="material-symbols-outlined" data-icon="share">share</span>
+</button>
+</div>
+</div>
+<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-8 py-4 rounded-full font-bold flex items-center gap-3 editorial-shadow active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="shopping_basket">shopping_basket</span>
+                Order Ingredients
+            </button>
+</section>
+<!-- Ingredients & Steps: Two Column Grid -->
+<section class="px-6 mt-16 grid grid-cols-1 lg:grid-cols-12 gap-12">
+<!-- Ingredients -->
+<div class="lg:col-span-4 bg-surface-container-low p-8 rounded-[2rem]">
+<h3 class="font-headline text-3xl font-bold mb-8 flex items-center gap-3">
+                    Ingredients
+                    <span class="text-sm font-body font-normal text-on-surface-variant">(6 items)</span>
+</h3>
+<ul class="space-y-4">
+<li class="flex items-center gap-4 group cursor-pointer">
+<div class="relative w-6 h-6 flex items-center justify-center">
+<input class="peer appearance-none w-6 h-6 border-2 border-outline rounded-md checked:bg-primary checked:border-primary transition-all" type="checkbox"/>
+<span class="material-symbols-outlined absolute text-white opacity-0 peer-checked:opacity-100 text-sm" data-icon="check">check</span>
+</div>
+<span class="font-medium group-hover:text-primary transition-colors">2 lbs Multi-colored Heirloom Carrots</span>
+</li>
+<li class="flex items-center gap-4 group cursor-pointer">
+<div class="relative w-6 h-6 flex items-center justify-center">
+<input class="peer appearance-none w-6 h-6 border-2 border-outline rounded-md checked:bg-primary checked:border-primary transition-all" type="checkbox"/>
+<span class="material-symbols-outlined absolute text-white opacity-0 peer-checked:opacity-100 text-sm" data-icon="check">check</span>
+</div>
+<span class="font-medium group-hover:text-primary transition-colors">3 tbsp Wildflower Honey</span>
+</li>
+<li class="flex items-center gap-4 group cursor-pointer">
+<div class="relative w-6 h-6 flex items-center justify-center">
+<input class="peer appearance-none w-6 h-6 border-2 border-outline rounded-md checked:bg-primary checked:border-primary transition-all" type="checkbox"/>
+<span class="material-symbols-outlined absolute text-white opacity-0 peer-checked:opacity-100 text-sm" data-icon="check">check</span>
+</div>
+<span class="font-medium group-hover:text-primary transition-colors">4 oz Soft Goat Cheese</span>
+</li>
+<li class="flex items-center gap-4 group cursor-pointer">
+<div class="relative w-6 h-6 flex items-center justify-center">
+<input class="peer appearance-none w-6 h-6 border-2 border-outline rounded-md checked:bg-primary checked:border-primary transition-all" type="checkbox"/>
+<span class="material-symbols-outlined absolute text-white opacity-0 peer-checked:opacity-100 text-sm" data-icon="check">check</span>
+</div>
+<span class="font-medium group-hover:text-primary transition-colors">1/2 cup Shelled Pistachios, toasted</span>
+</li>
+<li class="flex items-center gap-4 group cursor-pointer">
+<div class="relative w-6 h-6 flex items-center justify-center">
+<input class="peer appearance-none w-6 h-6 border-2 border-outline rounded-md checked:bg-primary checked:border-primary transition-all" type="checkbox"/>
+<span class="material-symbols-outlined absolute text-white opacity-0 peer-checked:opacity-100 text-sm" data-icon="check">check</span>
+</div>
+<span class="font-medium group-hover:text-primary transition-colors">2 Whole Star Anise pods</span>
+</li>
+<li class="flex items-center gap-4 group cursor-pointer">
+<div class="relative w-6 h-6 flex items-center justify-center">
+<input class="peer appearance-none w-6 h-6 border-2 border-outline rounded-md checked:bg-primary checked:border-primary transition-all" type="checkbox"/>
+<span class="material-symbols-outlined absolute text-white opacity-0 peer-checked:opacity-100 text-sm" data-icon="check">check</span>
+</div>
+<span class="font-medium group-hover:text-primary transition-colors">Fresh Thyme sprigs for garnish</span>
+</li>
+</ul>
+<div class="mt-12 bg-surface-container p-6 rounded-xl border-l-4 border-tertiary">
+<p class="text-sm italic font-headline text-tertiary">
+                        "The Digital Epicurean Tip: If you can't find heirloom, organic orange bunch carrots work beautifully if they have the greens still attached."
+                    </p>
+</div>
+</div>
+<!-- Steps -->
+<div class="lg:col-span-8">
+<h3 class="font-headline text-3xl font-bold mb-8">Preparation</h3>
+<div class="space-y-12">
+<div class="flex gap-6 group">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold text-xl editorial-shadow">1</div>
+<div class="space-y-3">
+<h4 class="font-bold text-xl text-primary">Prepare the Carrots</h4>
+<p class="text-on-surface-variant leading-relaxed body-lg">
+                                Trim the greens from the carrots, leaving about 1 inch of the stem. Gently scrub the skins under cool water. If the carrots are very thick, slice them in half lengthwise to ensure even cooking.
+                            </p>
+<div class="w-full h-48 rounded-2xl overflow-hidden bg-stone-100">
+<img alt="Preparing carrots" class="w-full h-full object-cover opacity-90" data-alt="top-down close up of fresh carrots with green tops being trimmed on a rustic wooden cutting board" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHXzlo6e3Fj3pe8JFKNwk864lvtcJu1fRvhDz5lGSi9y-MTz9Y1VUB8O1KkJffYdMbtjHheietelRLehTAxdI8X0U_m0QaoGYJrdSf7QNGdgzhsu5zcqFzUoEPMOETvlywo8ZL5FVP5emYy5Xu1XfpXBN-LyIMsrnww135jwuhfNK0qrnmxyCYGrgDjIwLvrBL2a-ayRj0oVATHwBAIqDxd-nv7beZzCIELoImhaDtIfLI31xnVYq2w8TJDHNfEltZmrJc8SAKD82N"/>
+</div>
+</div>
+</div>
+<div class="flex gap-6 group">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-surface-container-high text-primary flex items-center justify-center font-bold text-xl">2</div>
+<div class="space-y-3">
+<h4 class="font-bold text-xl text-primary">The Aromatics &amp; Honey</h4>
+<p class="text-on-surface-variant leading-relaxed body-lg">
+                                In a large wide skillet, melt 2 tablespoons of butter over medium heat. Add the star anise and carrots. Toss to coat and cook for 3 minutes until slightly softened. Drizzle with the honey and a pinch of flaky sea salt.
+                            </p>
+</div>
+</div>
+<div class="flex gap-6 group">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-surface-container-high text-primary flex items-center justify-center font-bold text-xl">3</div>
+<div class="space-y-3">
+<h4 class="font-bold text-xl text-primary">Braise &amp; Glaze</h4>
+<p class="text-on-surface-variant leading-relaxed body-lg">
+                                Add 1/4 cup of water or vegetable stock to the pan. Cover tightly and simmer for 10-12 minutes. Remove the lid, increase heat to medium-high, and cook until the liquid reduces to a thick, syrupy glaze that clings to the carrots.
+                            </p>
+</div>
+</div>
+<div class="flex gap-6 group">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-surface-container-high text-primary flex items-center justify-center font-bold text-xl">4</div>
+<div class="space-y-3">
+<h4 class="font-bold text-xl text-primary">The Final Touch</h4>
+<p class="text-on-surface-variant leading-relaxed body-lg">
+                                Transfer to a serving platter. While still warm, crumble the goat cheese over the top and sprinkle with toasted pistachios. Finish with fresh thyme and a crack of black pepper.
+                            </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Rating Widget -->
+<section class="px-6 mt-24">
+<div class="bg-surface-container-lowest p-10 rounded-[3rem] editorial-shadow text-center max-w-2xl mx-auto border-t-8 border-tertiary">
+<h3 class="font-headline text-3xl font-bold mb-4 italic text-tertiary">Did you enjoy this creation?</h3>
+<p class="text-on-surface-variant mb-8">Your feedback helps our AI Chef refine and curate even better experiences for the community.</p>
+<div class="flex justify-center gap-3 mb-8">
+<button class="group">
+<span class="material-symbols-outlined text-4xl text-outline-variant group-hover:text-tertiary transition-colors" data-icon="star" style="font-variation-settings: 'FILL' 0;">star</span>
+</button>
+<button class="group">
+<span class="material-symbols-outlined text-4xl text-outline-variant group-hover:text-tertiary transition-colors" data-icon="star" style="font-variation-settings: 'FILL' 0;">star</span>
+</button>
+<button class="group">
+<span class="material-symbols-outlined text-4xl text-outline-variant group-hover:text-tertiary transition-colors" data-icon="star" style="font-variation-settings: 'FILL' 0;">star</span>
+</button>
+<button class="group">
+<span class="material-symbols-outlined text-4xl text-outline-variant group-hover:text-tertiary transition-colors" data-icon="star" style="font-variation-settings: 'FILL' 0;">star</span>
+</button>
+<button class="group">
+<span class="material-symbols-outlined text-4xl text-outline-variant group-hover:text-tertiary transition-colors" data-icon="star" style="font-variation-settings: 'FILL' 0;">star</span>
+</button>
+</div>
+<button class="text-primary font-bold text-lg underline underline-offset-8 decoration-2 decoration-primary-container hover:decoration-primary transition-all">Write a detailed review</button>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-6 pt-3 bg-white/80 dark:bg-stone-900/80 backdrop-blur-md z-50 rounded-t-3xl shadow-[0px_-4px_20px_rgba(21,66,18,0.05)] md:hidden">
+<div class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 px-5 py-2 hover:text-emerald-800 dark:hover:text-emerald-200">
+<span class="material-symbols-outlined" data-icon="explore">explore</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[11px] font-semibold mt-1">Discover</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-emerald-100 dark:bg-emerald-900/40 text-emerald-900 dark:text-emerald-100 rounded-xl px-5 py-2">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[11px] font-semibold mt-1">Library</span>
+</div>
+<div class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 px-5 py-2 hover:text-emerald-800 dark:hover:text-emerald-200">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[11px] font-semibold mt-1">AI Chef</span>
+</div>
+<div class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 px-5 py-2 hover:text-emerald-800 dark:hover:text-emerald-200">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[11px] font-semibold mt-1">Feed</span>
+</div>
+</nav>
+</body></html>

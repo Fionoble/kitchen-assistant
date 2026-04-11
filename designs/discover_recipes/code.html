@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Digital Epicurean | Feed</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error": "#ffffff",
+                        "on-tertiary-fixed": "#301400",
+                        "secondary-container": "#d6eab5",
+                        "on-tertiary-container": "#ffb27a",
+                        "inverse-surface": "#30312e",
+                        "on-surface": "#1b1c1a",
+                        "tertiary": "#5d2c00",
+                        "on-secondary-container": "#596a40",
+                        "surface-container-highest": "#e4e2de",
+                        "surface-variant": "#e4e2de",
+                        "primary": "#154212",
+                        "secondary": "#53643a",
+                        "background": "#fbf9f5",
+                        "error": "#ba1a1a",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed": "#121f01",
+                        "on-primary": "#ffffff",
+                        "primary-fixed-dim": "#a1d494",
+                        "tertiary-fixed": "#ffdcc5",
+                        "surface-tint": "#3b6934",
+                        "tertiary-container": "#7f3f00",
+                        "primary-container": "#2d5a27",
+                        "tertiary-fixed-dim": "#ffb783",
+                        "on-primary-fixed": "#002201",
+                        "on-tertiary-fixed-variant": "#713700",
+                        "surface": "#fbf9f5",
+                        "on-background": "#1b1c1a",
+                        "outline-variant": "#c2c9bb",
+                        "error-container": "#ffdad6",
+                        "on-secondary": "#ffffff",
+                        "surface-container-low": "#f5f3ef",
+                        "surface-bright": "#fbf9f5",
+                        "inverse-on-surface": "#f2f0ed",
+                        "secondary-fixed-dim": "#bacd9b",
+                        "surface-dim": "#dbdad6",
+                        "on-tertiary": "#ffffff",
+                        "on-surface-variant": "#42493e",
+                        "secondary-fixed": "#d6eab5",
+                        "inverse-primary": "#a1d494",
+                        "on-secondary-fixed-variant": "#3c4c25",
+                        "on-primary-container": "#9dd090",
+                        "surface-container": "#efeeea",
+                        "outline": "#72796e",
+                        "on-error-container": "#93000a",
+                        "primary-fixed": "#bcf0ae",
+                        "surface-container-high": "#eae8e4",
+                        "on-primary-fixed-variant": "#23501e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Noto Serif"],
+                        "body": ["Plus Jakarta Sans"],
+                        "label": ["Plus Jakarta Sans"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .serif-italic { font-family: 'Noto Serif'; font-style: italic; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body text-on-surface">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky z-50 bg-stone-100 dark:bg-stone-900 bg-[#fbf9f5] dark:bg-stone-950">
+<div class="flex justify-between items-center px-6 py-4 max-w-screen-xl mx-auto">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-emerald-900 dark:text-emerald-500" data-icon="restaurant_menu">restaurant_menu</span>
+<h1 class="font-['Noto_Serif'] text-on-surface text-2xl font-bold italic text-emerald-900 dark:text-emerald-500">The Digital Epicurean</h1>
+</div>
+<div class="flex items-center gap-6">
+<nav class="hidden md:flex gap-8 items-center">
+<a class="text-stone-600 dark:text-stone-400 hover:opacity-80 transition-opacity font-semibold" href="#">Discover</a>
+<a class="text-stone-600 dark:text-stone-400 hover:opacity-80 transition-opacity font-semibold" href="#">Library</a>
+<a class="text-stone-600 dark:text-stone-400 hover:opacity-80 transition-opacity font-semibold" href="#">AI Chef</a>
+<a class="text-emerald-900 dark:text-emerald-400 font-bold hover:opacity-80 transition-opacity" href="#">Feed</a>
+</nav>
+<img alt="User profile photo" class="w-10 h-10 rounded-full border-2 border-primary/10 object-cover" data-alt="close-up portrait of a cheerful chef in a white uniform with soft kitchen lighting background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDI8StLUh68OtChVhVYD9rtrgT3m1CY18r6mEXnpffQ3H6EComOUZEEVFztN_1JWupYiq22_umAGPys6K3aOXDwJiWnxTBmpYdWlvPVZCXjrW_SasZ9djlPnrNBJQQ1x1wZ646ADJBOq5zt8PB3Txb98EW1UPBbnNaOcdpA-lq_2l0mGBxnDIswjimlaaXjewCHYtn5O1dzKC1s3tAZgbBgi34ToBVQLFDjQompLB2q8_RYF2IsVBplwBTwSm0BPV3Mrzb9vK5edONu"/>
+</div>
+</div>
+</header>
+<main class="max-w-screen-xl mx-auto px-6 py-8 pb-32">
+<!-- Hero Editorial Section -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-16 items-center">
+<div class="md:col-span-7 relative">
+<div class="relative z-10 rounded-xl overflow-hidden shadow-xl aspect-[16/10]">
+<img class="w-full h-full object-cover" data-alt="vibrant top-down shot of a rustic mediterranean vegetable stew in a cast iron pot with scattered fresh herbs and golden lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBy4ulCmZ68aAAgZmeASJGd1bXelryr8ByAB7MK7aqo2OJg8V4OlCiu1p7UOEKHzw6grBdQhUHda67njINsJwVOqkoOYOCXcA28RPJRRuB2KOjsk2bbL5_kTwe5DCeNZ1sWxDU5ARt2Rb_tM3sny2edFs4pEFDK9bUuk1NEttM7-PMYlIw6I_zfOP5W8SkkGO_P_97a72KZCrHceuvY2oHrFuozydWVrj7rdb2o-qcjJvqRV5CfcA-wjTZjwX9SOEHZfpj5GPBqtwSt"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-8">
+<span class="bg-tertiary-container text-tertiary-fixed-dim px-3 py-1 rounded-full text-xs font-bold tracking-widest uppercase mb-4 inline-block">AI Featured</span>
+<h2 class="font-headline text-4xl md:text-5xl text-white font-bold leading-tight max-w-lg">The Art of the Slow Roast</h2>
+</div>
+</div>
+<!-- Asymmetric overlap element -->
+<div class="hidden lg:block absolute -right-12 -bottom-8 w-48 h-48 bg-secondary-container rounded-xl z-20 p-6 shadow-lg rotate-3">
+<p class="font-headline italic text-on-secondary-container leading-relaxed text-lg">"Cooking is the only art form that uses all five senses."</p>
+</div>
+</div>
+<div class="md:col-span-5 flex flex-col gap-6">
+<h3 class="font-headline text-2xl text-primary font-bold">Community Spotlight</h3>
+<div class="space-y-6">
+<div class="flex gap-4 items-start bg-surface-container-low p-4 rounded-xl">
+<img class="w-12 h-12 rounded-full flex-shrink-0" data-alt="professional headshot of a smiling man in a rustic wooden kitchen setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvA7t3ursmvzjRiHaWPJKnej1cSYCQyRbKZdIOkwk-2R4ewx2NqleWU6HBJr4QeUwR9xWrnqsKfFm12lJGdYaKOYnrOa7eS_EBziADtqFSo5n3mW8lfKQJ-9oWJm8JiVqpGLbfXawsh22gTLbNgUE2NJBUXY3QCla4Qr5PNUj327UYKuy0gN7wAHk4ulsKozr-ZXXc0N3GVTqs7WIS7HYdtj0_NwBt70ZyPuy92OkbWJI4i1kDY3eFG81FWTPVJVZkEwzQuTbt4_qi"/>
+<div>
+<p class="font-bold text-on-surface">Julian De Silva</p>
+<p class="text-on-surface-variant text-sm line-clamp-2 italic">"Just mastered the 48-hour sourdough. The AI Chef suggested adding a touch of honey—perfection!"</p>
+</div>
+</div>
+<div class="flex gap-4 items-start bg-surface-container-low p-4 rounded-xl">
+<img class="w-12 h-12 rounded-full flex-shrink-0" data-alt="portrait of a young woman with flour-dusted hands in a sun-drenched home bakery" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNFw7sNFe-b9VKL2J8om99oJCjgwXL_kJo2CJDhakCXEBaVI3wbG6POh9d0R89TTVTpKBSR88PppGyWHV480Nd2TAz-9L1EqxefCO3iLQYJkSyuwYSw1HVQODL9NZAWZJSsqVQ6usDs84sEWIqfO_wP5yEq5jPzAveeu_IRw5oyg44zAHwDbuWQg6st9V1wFeD-AelO6u6er7yzu9N1SLy5ZRcYnmfiadFQTfTPOpzGGcf3LUZGsEOdGljPT7VGC8GVGpkmIpHaiZ3"/>
+<div>
+<p class="font-bold text-on-surface">Elena Moretti</p>
+<p class="text-on-surface-variant text-sm line-clamp-2 italic">"This week's pasta workshop was incredible. Shared the recipe below."</p>
+</div>
+</div>
+</div>
+<button class="w-full py-4 rounded-full bg-gradient-to-br from-primary to-primary-container text-on-primary font-bold flex items-center justify-center gap-2 shadow-[0px_12px_32px_rgba(21,66,18,0.15)]">
+<span class="material-symbols-outlined" data-icon="edit">edit</span>
+                    Share Your Creation
+                </button>
+</div>
+</section>
+<!-- Main Feed (Bento Grid Style) -->
+<div class="flex items-center justify-between mb-8">
+<h2 class="font-headline text-3xl font-bold">Latest Discoveries</h2>
+<div class="flex gap-2 bg-surface-container-high p-1 rounded-full">
+<button class="px-6 py-2 bg-white rounded-full text-sm font-bold shadow-sm">Recent</button>
+<button class="px-6 py-2 text-on-surface-variant text-sm font-semibold">Trending</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Post 1: Full Card -->
+<article class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow group">
+<div class="relative overflow-hidden aspect-video">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="a beautifully plated seasonal kale and roasted sweet potato salad with pumpkin seeds and a light vinaigrette on a ceramic plate" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBprudctRmMnkD0xgvaFt1t3e1eIphYpD9CWa5f2s6mdXTJfFfB05pjPaQw0KRjzyFh4EyvlXcfEY9T4UJ5gFU940dgZCm9OGjVOhZhcXRa8eIzOksj_Deen4aadJ9PVUD3XDzY53zOEw65KuzlvYb2iXCnybaomA0ZuKzjJslr3seE6ayq0tBo0SVRLhUF6dg-k15dN4DFtEo_QZ216UsjsIl7cLd3QRJDDUPQABv9VJLEAuMxzbPs0_ae5F5n88GNI_Gq8UOdngXB"/>
+<div class="absolute top-4 right-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-tertiary" data-icon="auto_awesome">auto_awesome</span>
+<span class="text-[10px] font-bold text-tertiary tracking-wider uppercase">AI Optimized</span>
+</div>
+</div>
+<div class="p-6">
+<div class="flex items-center gap-3 mb-4">
+<img class="w-8 h-8 rounded-full" data-alt="avatar of a home cook in a garden setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAtcszGt7IrBXtqBMzdLg753W6gfO6NapWIsTkLmP6IfC1LjfVJjF9zARgyt_0_elJqMMFHKikzWFalt3TeDqvC77TVc2KX_HlVnW8stlunapX5fdy-ZeH5J47V5lQJebo9YpDk2XOhZ4KX-XHl98_yqVJha9I_a5sYdixRwkoiuNt0jMwTBYazkNSEsjeIsbPjYUpDeViH7aEd018eB1qb5UM9iqCGzXPhnz8wSGxwgjC36fi0clg-EcL7fu2uN71ediHbB_oyD5e"/>
+<span class="font-semibold text-sm">Sophie Chen</span>
+<span class="text-on-surface-variant text-xs ml-auto">2h ago</span>
+</div>
+<h4 class="font-headline text-xl font-bold mb-2 group-hover:text-primary transition-colors">Autumn Harvest Bowl</h4>
+<p class="text-on-surface-variant text-sm mb-6 leading-relaxed">A symphony of roasted roots and massaged kale, elevated by a maple-tahini drizzle suggested by Chef AI.</p>
+<div class="flex items-center justify-between pt-4 border-t border-outline-variant/20">
+<div class="flex gap-4">
+<button class="flex items-center gap-1.5 text-on-surface-variant hover:text-red-500 transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="favorite">favorite</span>
+<span class="text-xs font-bold">124</span>
+</button>
+<button class="flex items-center gap-1.5 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="chat_bubble">chat_bubble</span>
+<span class="text-xs font-bold">18</span>
+</button>
+</div>
+<button class="text-primary hover:opacity-70 transition-opacity">
+<span class="material-symbols-outlined text-[22px]" data-icon="bookmark_add">bookmark_add</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Post 2: Editorial Style -->
+<article class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow lg:col-span-1 lg:row-span-2">
+<div class="relative overflow-hidden h-[400px]">
+<img class="w-full h-full object-cover" data-alt="close-up of a vibrant salmon and citrus salad bowl with avocado and fresh radish slices under bright natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDX4h2jm5p0vo3azZrL_QVjkF1P04GLLza0mYj2GMEMnHQW-KmMrVBLqZY9DRH90JkR4yli2HijevReDKmAON8__gBS5vv1OpGMVNsDrgAocEIItoCwLXke9MlF1fWRMP7a00QOkF-EaCsAJEzrI6fJGvdoPW8hHq4PIVBBxBzvwULNu_eQYuKH1n4ED32x-VSL2nksXNekNGhkJlXwG3-hacqAw9oOWbPIEQmKF8k_qADR3KL0shhR01i3M-SQ5P6QXjAL3aEJJiUE"/>
+</div>
+<div class="p-8">
+<div class="flex items-center gap-3 mb-6">
+<img class="w-10 h-10 rounded-full" data-alt="friendly elderly man in a rustic apron" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlq9n3MC9A2akblRfxSIiGNXPsoveJy5-aKfe3lHDxuR69erqm_RnKldHCJyMmFiqQP2NvwvItQxbXRXs-e8Tt9hEASR3Ll3RzSorB2Sqi_lViTJ5HnPMbcxYgvgHYedjQsvISZoQcDdoef-QGhDwl89JS8dxxkWtBYIH_2a_ZcxLa5pYplh3BwRL69xvbS-32x2t2pKGjnSyl_Y7N2O3g5ePN8u-7USfC2DM7UvocIdld0FZqBRBK2BD3QmJcSEDVkpIw51f3w33N"/>
+<div>
+<p class="font-bold text-sm">Chef Marco W.</p>
+<p class="text-xs text-on-surface-variant uppercase tracking-widest font-semibold">Verified Author</p>
+</div>
+</div>
+<h4 class="font-headline text-3xl font-bold mb-4 leading-tight">Wild Salmon &amp; Citrus: A Summer Study</h4>
+<p class="text-on-surface-variant mb-8 italic">"The key to this dish is the temperature contrast. The salmon must be warm, the citrus ice-cold."</p>
+<div class="grid grid-cols-2 gap-4 mb-8">
+<div class="bg-surface-container-low p-4 rounded-xl text-center">
+<p class="text-[10px] uppercase font-bold text-on-surface-variant mb-1">Time</p>
+<p class="font-bold">25 min</p>
+</div>
+<div class="bg-surface-container-low p-4 rounded-xl text-center">
+<p class="text-[10px] uppercase font-bold text-on-surface-variant mb-1">Skill</p>
+<p class="font-bold">Medium</p>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex -space-x-2">
+<img class="w-8 h-8 rounded-full border-2 border-white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqGpeLgO_zFaCKpRIcMWVo025UDkOXLJtwZAbOY7YDkqq4bDXLR6EpfFlnZcDWbJefrN2bCkZMZpohBLUbB7YW3P4F6i--Ux_YuYWGS6LAxUVtMxmbYsl0IKckYi1uTLXPn8aKwGQp0GCqzH0eNDhOdlYqAKc2OUXLUeimo3KvizaJWAx7U_VF7jgHqEC_BaG0gjm_6b6XLgYStTled_cmrkXzlpEt3dHCD90_UG2gN-rSjkxAzXm6vEVMZVafZMSFUSbcgifkgnGW"/>
+<img class="w-8 h-8 rounded-full border-2 border-white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAP_mGeccCGPr9mcCwI_nTigKhyZ0iY3cwi6Gg6PejZAaH08mhMHZK-2fgKo8MyP1H90Sows69N5_R_BLBYzue1-0NMlGl1_lu7mCRUJROis7jMlazbtP3jJ1oK8XSDM7rBracCOP4sakaHf_yeKstJgnN5nzKyttPujXbR4COQ-dA8jaKG2-lDIDyIsQrrlI2wB7MJ3TI6_Qs-7Fkh_OZE0px-yaTPmCIkMGw6K5lVlt67P3VVBnUFVTGt2fahsijIoBYAEKxdLgPu"/>
+<div class="w-8 h-8 rounded-full bg-secondary-container border-2 border-white flex items-center justify-center text-[10px] font-bold">+42</div>
+</div>
+<button class="px-6 py-2 bg-primary text-on-primary rounded-full text-xs font-bold">View Article</button>
+</div>
+</div>
+</article>
+<!-- Post 3: Minimalist Card -->
+<article class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow group">
+<div class="relative overflow-hidden aspect-video">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="a decadent stack of artisanal donuts with glossy chocolate glaze and colorful sprinkles on a marble tabletop" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0RhXhUzBYhwmwJgpKsk5ngNqwCLzfUgIItj9aWmGV_tWGL14kywrhvN1873HzEjmWaTbNO4qHuLeszQizo7I_NwQy-11jqNF43dKVgAJr_GEPhBlwBwgVs5SJrQu-S1ff1vCosjSLC9eg0v2gSEejMHfzRBea-RlJsdakMPmI-_ZxupNhtPbpgd6rQqX0iHVInlM6I0n03J6a4b_m_mOR1bWlTGD6Xomh0LvOEArJ5c5sRsgADEQGnZJPKrz0ru_YDeBiDmt9iRgl"/>
+</div>
+<div class="p-6">
+<div class="flex items-center gap-3 mb-4">
+<img class="w-8 h-8 rounded-full" data-alt="woman laughing in a bright modern kitchen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB86A7YbgpVeCqs_odzHy9LCNECr7kPCgjHccvm6rNfsBSVEeZQWDNpzHVT8uAJyxpwHViq2BMnfwAr4CX913UjvWrLVYp3SFjssMFbWINkeYpB-784Ed69FGIHBwHM9n7rlxP5V-BMQl5iCvA14qn5iSOTGzp7IDaKwnV_Any2yAnxSfQ4GyKiNyJdBTSlUCTIqCLjC7Mo_31m1PH8YHe6uKwLnv8ijwUz5zJAsnM_tcgT8CTBKlqPf4xHwxgMKt-FH3x9yEqbHcCL"/>
+<span class="font-semibold text-sm">Lila Ross</span>
+<span class="text-on-surface-variant text-xs ml-auto">5h ago</span>
+</div>
+<h4 class="font-headline text-xl font-bold mb-2">Midnight Cocoa Glaze</h4>
+<p class="text-on-surface-variant text-sm mb-6 leading-relaxed">A deep, dark cocoa glaze that stays shiny even after setting. Chef AI helped balance the bitterness.</p>
+<div class="flex items-center justify-between pt-4 border-t border-outline-variant/20">
+<div class="flex gap-4">
+<button class="flex items-center gap-1.5 text-on-surface-variant hover:text-red-500 transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="favorite">favorite</span>
+<span class="text-xs font-bold">342</span>
+</button>
+</div>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[22px]" data-icon="share">share</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Post 4: AI Ingredient Swap Card -->
+<article class="bg-emerald-900/5 dark:bg-emerald-900/20 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-primary/10">
+<div class="p-6">
+<div class="flex items-center gap-2 mb-4 text-primary font-bold text-sm">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+<span>AI Suggestion Community</span>
+</div>
+<h4 class="font-headline text-xl font-bold mb-2">Vegan Carbonara Swap</h4>
+<p class="text-on-surface-variant text-sm mb-4">"Try using smoked sunflower seeds instead of guanciale for that smoky, salty crunch."</p>
+<div class="bg-white/50 backdrop-blur-sm rounded-lg p-4 mb-6">
+<div class="flex justify-between items-center mb-2">
+<span class="text-xs font-bold uppercase text-on-surface-variant">Swapped Ingredient</span>
+<span class="bg-tertiary text-white px-2 py-0.5 rounded text-[10px] font-bold">PRO TIP</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="line-through text-on-surface-variant opacity-50">Guanciale</div>
+<span class="material-symbols-outlined text-primary text-sm" data-icon="arrow_forward">arrow_forward</span>
+<div class="font-bold text-primary">Smoked Sunflowers</div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<img class="w-8 h-8 rounded-full border border-primary/20" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuq43Quxcnn2ZwG3xXQXxIXhy3P_Wje5KJ8mX4o6QyuhZuje6A4rDczLIpxb-DE10MDueRQh7C4Ga5i0d18XRENcNoNKqd6aU6GemdPR029RmxVXMdW43EPr4mYj8BlAJqiTBV8dkBAO3y_Y0-L4D_7pCDuASu0gVhBzo_5k0Wc998dBkSPBufjP_-goy0d9a9aej17l0NhWHkR7lC-JIOtmT7Akuth_muzmHfsqYcecPOqKew2UOiKcCrHhWzqMlv9BAoZaq3CRKs"/>
+<span class="text-xs font-bold text-on-surface">Community Consensus: 92% Good</span>
+</div>
+</div>
+</article>
+<!-- Post 5: Visual Mosaic Item -->
+<article class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow group">
+<div class="relative overflow-hidden aspect-video">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="a stack of fluffy pancakes with fresh blueberries and honey pouring over the side with soft morning light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8W2k2EJ9E3hjrYtoyXuEgInVSxMwnpn3usNaCxttO-teXtltu2S_5GdLsajsSBo_tAENz4RXGmBQUs7LJ_5V8xuGFgppZgemN6YFz0xIZqYb6KcZtfwzZ58fvb5RkCKpbfa7QIELWWVewSvATC7jYN48EPk6MKne4nicqe1LQ9xI0Tt9dKqyYOTZVzwCApWgiOWd1t3FZY1dZ-GVYCF22MIHWQc9F3C93BkPuAzNtGP6Azty_8zfLTzaAvsD39GXa3V_nr8knV6rC"/>
+</div>
+<div class="p-6">
+<div class="flex items-center gap-3 mb-4">
+<img class="w-8 h-8 rounded-full" data-alt="cheerful person in a minimalist kitchen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAu8TU2YKK49Ykv1-3xkVugDev9Lp7adIQK6AMPHmbmA5m5jHapV1Hx86IxBA47CjeIdDVlcAbKsmchXqy1JUktMIL0Gy5IUTFFhNdUKsPugAqwFVnL_b5fa_ReoR_ilTuSiujucp47WHIltBex6Wra4MhfDoEXpeU7KqytZdecnmBpPMFxut0wOMlFLFcTWLZM2KLPZnk5wBr-UswDS3nZFlVTT4S9OoRy1s1SXgmWfxxR0l5nhUHrRtE2RoHrfyeTMSKsdn_yE5QY"/>
+<span class="font-semibold text-sm">Priya K.</span>
+<span class="text-on-surface-variant text-xs ml-auto">8h ago</span>
+</div>
+<h4 class="font-headline text-xl font-bold mb-2">Blueberry Cloud Fluff</h4>
+<p class="text-on-surface-variant text-sm mb-6 leading-relaxed">The secret is in the whipped egg whites. AI Chef suggested adding a pinch of cream of tartar.</p>
+<div class="flex items-center justify-between pt-4 border-t border-outline-variant/20">
+<div class="flex gap-4">
+<button class="flex items-center gap-1.5 text-on-surface-variant hover:text-red-500 transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="favorite">favorite</span>
+<span class="text-xs font-bold">89</span>
+</button>
+<button class="flex items-center gap-1.5 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="chat_bubble">chat_bubble</span>
+<span class="text-xs font-bold">12</span>
+</button>
+</div>
+<button class="text-primary hover:opacity-70 transition-opacity">
+<span class="material-symbols-outlined text-[22px]" data-icon="bookmark_add">bookmark_add</span>
+</button>
+</div>
+</div>
+</article>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 rounded-t-3xl bg-white/80 dark:bg-stone-900/80 backdrop-blur-md shadow-[0px_-4px_20px_rgba(21,66,18,0.05)] md:hidden">
+<div class="flex justify-around items-center px-4 pb-6 pt-3">
+<a class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 px-5 py-2 hover:text-emerald-800 dark:hover:text-emerald-200" href="#">
+<span class="material-symbols-outlined" data-icon="explore">explore</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[11px] font-semibold">Discover</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 px-5 py-2 hover:text-emerald-800 dark:hover:text-emerald-200" href="#">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[11px] font-semibold">Library</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-500 dark:text-stone-400 px-5 py-2 hover:text-emerald-800 dark:hover:text-emerald-200" href="#">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[11px] font-semibold">AI Chef</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-emerald-100 dark:bg-emerald-900/40 text-emerald-900 dark:text-emerald-100 rounded-xl px-5 py-2 active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="group" style="font-variation-settings: 'FILL' 1;">group</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[11px] font-semibold">Feed</span>
+</a>
+</div>
+</nav>
+</body></html>
