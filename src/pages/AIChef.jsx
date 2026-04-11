@@ -37,9 +37,9 @@ function ChatMessage({ msg }) {
           <Icon name="person" class="text-on-surface-variant text-[18px]" />
         </div>
       )}
-      <div class={`flex flex-col gap-2 max-w-[85%] ${isUser ? "items-end" : ""}`}>
+      <div class={`flex flex-col gap-2 max-w-[85%] min-w-0 ${isUser ? "items-end" : ""}`}>
         <div
-          class={`p-5 rounded-2xl shadow-[0px_8px_24px_rgba(0,0,0,0.02)] ${
+          class={`p-5 rounded-2xl shadow-[0px_8px_24px_rgba(0,0,0,0.02)] overflow-hidden ${
             isUser
               ? "bg-primary-container text-on-primary-container rounded-tr-none"
               : "bg-surface-container-lowest rounded-tl-none border border-outline-variant/10"
@@ -57,7 +57,7 @@ function ChatMessage({ msg }) {
               {recipe.description && (
                 <p class="text-on-surface-variant text-sm mt-1">{recipe.description}</p>
               )}
-              <div class="flex items-center gap-3 mt-2 text-on-surface-variant text-sm">
+              <div class="flex flex-wrap items-center gap-3 mt-2 text-on-surface-variant text-sm">
                 {recipe.time && (
                   <span class="flex items-center gap-1">
                     <Icon name="schedule" class="text-[14px]" /> {recipe.time}
