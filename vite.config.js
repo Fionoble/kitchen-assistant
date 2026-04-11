@@ -3,6 +3,6 @@ import preact from "@preact/preset-vite";
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
-  base: "/kitchen-assistant/",
+  base: "/",
   plugins: [preact(), tailwindcss()],
 });
