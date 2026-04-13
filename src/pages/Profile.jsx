@@ -26,6 +26,7 @@ function ToggleChip({ label, active, onClick }) {
 export function Profile() {
   const showKey = useSignal(false);
   const saved = useSignal(false);
+  const customAllergy = useSignal("");
   const p = profile.value;
 
   const handleToggleDiet = (diet) => {
@@ -147,6 +148,43 @@ export function Profile() {
               onClick={() => handleToggleAllergy(allergy)}
             />
           ))}
+          {(p.allergies || []).filter((a) => !ALLERGY_OPTIONS.includes(a)).map((custom) => (
+            <ToggleChip
+              key={custom}
+              label={custom}
+              active={true}
+              onClick={() => handleToggleAllergy(custom)}
+            />
+          ))}
+        </div>
+        <div class="flex items-center gap-2 mt-4">
+          <input
+            class="flex-grow bg-surface-container-lowest border-none rounded-xl px-4 py-2.5 text-sm text-on-surface focus:ring-2 focus:ring-primary/20 outline-none"
+            placeholder="Add a custom allergy..."
+            value={customAllergy.value}
+            onInput={(e) => (customAllergy.value = e.currentTarget.value)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                const val = customAllergy.value.trim();
+                if (val && !(p.allergies || []).includes(val)) {
+                  updateProfile({ allergies: [...(p.allergies || []), val] });
+                }
+                customAllergy.value = "";
+              }
+            }}
+          />
+          <button
+            onClick={() => {
+              const val = customAllergy.value.trim();
+              if (val && !(p.allergies || []).includes(val)) {
+                updateProfile({ allergies: [...(p.allergies || []), val] });
+              }
+              customAllergy.value = "";
+            }}
+            class="px-4 py-2.5 rounded-xl bg-surface-container-high text-primary font-semibold text-sm hover:bg-surface-container-highest transition-colors"
+          >
+            Add
+          </button>
         </div>
       </section>
 
