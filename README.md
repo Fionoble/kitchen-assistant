@@ -4,6 +4,8 @@ A PWA kitchen assistant that helps you create meals with AI, save recipes, build
 
 **Live:** [cooking-buddy.fio.dev](https://cooking-buddy.fio.dev)
 
+> 🌱 **A personal project.** Cooking Buddy is just one of a handful of small PWAs I build for myself to help with everyday life — not a commercial product, just my own everyday tools.
+
 ## Features
 
 - **AI Chef** — Chat with an AI sous chef to generate recipes from ingredients you have on hand, dietary needs, or whatever you're in the mood for
