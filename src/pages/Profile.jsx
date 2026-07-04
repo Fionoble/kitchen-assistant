@@ -2,6 +2,9 @@ import { useSignal } from "@preact/signals";
 import {
   profile,
   updateProfile,
+  isGatewayMode,
+  setGatewayToken,
+  clearGatewayToken,
   DIETARY_OPTIONS,
   ALLERGY_OPTIONS,
   APPLIANCE_OPTIONS,
@@ -27,7 +30,15 @@ export function Profile() {
   const showKey = useSignal(false);
   const saved = useSignal(false);
   const customAllergy = useSignal("");
+  const gatewayInput = useSignal("");
   const p = profile.value;
+
+  const handleGatewayConnect = () => {
+    const token = gatewayInput.value.trim();
+    if (!token) return;
+    setGatewayToken(token);
+    gatewayInput.value = "";
+  };
 
   const handleToggleDiet = (diet) => {
     const current = p.dietaryRestrictions || [];
@@ -214,6 +225,48 @@ export function Profile() {
           AI Configuration
         </h3>
         <div class="space-y-6">
+          <div>
+            <label class="text-sm font-semibold text-on-surface-variant mb-1 block">
+              Republic Gateway
+            </label>
+            <p class="text-xs text-on-surface-variant mb-3">
+              Connect with a Cooking Buddy app token — no API key needed. When connected, all AI
+              requests go through the gateway.
+            </p>
+            {isGatewayMode.value ? (
+              <div class="flex items-center justify-between gap-3 bg-surface-container-lowest rounded-xl px-4 py-3">
+                <div class="flex items-center gap-2 text-sm font-semibold text-primary">
+                  <Icon name="cloud_done" filled class="text-xl" />
+                  Gateway mode active
+                </div>
+                <button
+                  onClick={clearGatewayToken}
+                  class="px-4 py-2 rounded-xl bg-error text-white font-semibold text-sm hover:opacity-90 transition-opacity"
+                >
+                  Disconnect
+                </button>
+              </div>
+            ) : (
+              <div class="flex items-center gap-2">
+                <input
+                  class="flex-grow bg-surface-container-lowest border-none rounded-xl px-4 py-3 text-on-surface focus:ring-2 focus:ring-primary/20 outline-none font-mono text-sm"
+                  placeholder="buddy app token"
+                  type="password"
+                  value={gatewayInput.value}
+                  onInput={(e) => (gatewayInput.value = e.currentTarget.value)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter") handleGatewayConnect();
+                  }}
+                />
+                <button
+                  onClick={handleGatewayConnect}
+                  class="px-4 py-3 rounded-xl btn-primary text-on-primary font-semibold text-sm"
+                >
+                  Connect
+                </button>
+              </div>
+            )}
+          </div>
           <div>
             <label class="text-sm font-semibold text-on-surface-variant mb-1 block">OpenAI API Key</label>
             <p class="text-xs text-on-surface-variant mb-3">

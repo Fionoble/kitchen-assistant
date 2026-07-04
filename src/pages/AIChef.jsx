@@ -193,9 +193,10 @@ export function AIChef() {
       {!apiKeyReady && (
         <div class="bg-tertiary-fixed/30 p-6 rounded-xl mb-8 text-center">
           <Icon name="key" class="text-3xl text-tertiary mb-2" />
-          <h3 class="font-bold text-lg mb-2">Set up your API key</h3>
+          <h3 class="font-bold text-lg mb-2">Set up AI access</h3>
           <p class="text-on-surface-variant text-sm mb-4">
-            To chat with AI Chef, add your API key in Profile settings.
+            To chat with AI Chef, connect the Republic gateway or add your API key in Profile
+            settings.
           </p>
           <a
             href="/profile"

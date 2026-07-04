@@ -1,5 +1,6 @@
 import { signal } from "@preact/signals";
 import { profile } from "./profile.js";
+import { openAIRequest } from "../lib/openai.js";
 
 export const messages = signal(loadFromStorage("kitchen-chat", []));
 export const isLoading = signal(false);
@@ -60,10 +61,10 @@ You can include text before and after the recipe block. Always include a recipe 
   return sys;
 }
 
-async function callOpenAI(apiKey, msgs) {
-  const res = await fetch("https://api.openai.com/v1/chat/completions", {
+async function callOpenAI(req, msgs) {
+  const res = await fetch(req.url, {
     method: "POST",
-    headers: { "Content-Type": "application/json", Authorization: `Bearer ${apiKey}` },
+    headers: req.headers,
     body: JSON.stringify({ model: "gpt-4o-mini", messages: msgs, max_tokens: 2048 }),
   });
   if (!res.ok) throw new Error(`OpenAI error: ${res.status} ${await res.text()}`);
@@ -72,8 +73,10 @@ async function callOpenAI(apiKey, msgs) {
 }
 
 export async function sendMessage(text) {
-  const p = profile.value;
-  if (!p.apiKey) throw new Error("Please set your OpenAI API key in Profile settings.");
+  const req = openAIRequest("chat/completions");
+  if (!req) {
+    throw new Error("Connect the Republic gateway or set your OpenAI API key in Profile settings.");
+  }
 
   const userMsg = { role: "user", content: text, timestamp: Date.now() };
   messages.value = [...messages.value, userMsg];
@@ -86,7 +89,7 @@ export async function sendMessage(text) {
       ...messages.value.map((m) => ({ role: m.role, content: m.content })),
     ];
 
-    const response = await callOpenAI(p.apiKey, apiMessages);
+    const response = await callOpenAI(req, apiMessages);
     const aiMsg = { role: "assistant", content: response, timestamp: Date.now() };
     messages.value = [...messages.value, aiMsg];
     persistMessages();

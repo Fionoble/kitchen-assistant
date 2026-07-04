@@ -1,6 +1,7 @@
 import { LocationProvider, Router, Route } from "preact-iso";
 import { Header } from "./components/Header.jsx";
 import { BottomNav } from "./components/BottomNav.jsx";
+import { Toast } from "./components/Toast.jsx";
 import { Discover } from "./pages/Discover.jsx";
 import { Library } from "./pages/Library.jsx";
 import { AIChef } from "./pages/AIChef.jsx";
@@ -24,6 +25,7 @@ export function App() {
           </Router>
         </main>
         <BottomNav />
+        <Toast />
       </div>
     </LocationProvider>
   );

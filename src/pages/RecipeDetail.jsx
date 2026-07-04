@@ -3,6 +3,7 @@ import { getRecipe, toggleFavorite, favoriteIds, removeRecipe } from "../stores/
 import { useRecipeImage } from "../hooks/useRecipeImage.js";
 import { generatingImages } from "../stores/imageGen.js";
 import { deleteImage } from "../stores/imageDb.js";
+import { shareRecipe } from "../lib/share.js";
 import { Icon } from "../components/Icon.jsx";
 
 export function RecipeDetail() {
@@ -30,23 +31,6 @@ export function RecipeDetail() {
       deleteImage(recipe.id).catch(() => {});
       removeRecipe(recipe.id);
       route("/library");
-    }
-  };
-
-  const handleShare = async () => {
-    const shareData = {
-      title: recipe.title,
-      text: `Check out this recipe: ${recipe.title}${recipe.description ? " - " + recipe.description : ""}`,
-    };
-    if (navigator.share) {
-      try {
-        await navigator.share(shareData);
-      } catch {}
-    } else {
-      await navigator.clipboard.writeText(
-        `${recipe.title}\n${recipe.description || ""}\n\nIngredients:\n${(recipe.ingredients || []).join("\n")}`
-      );
-      alert("Recipe copied to clipboard!");
     }
   };
 
@@ -133,7 +117,7 @@ export function RecipeDetail() {
             <Icon name="favorite" filled={isFav} />
           </button>
           <button
-            onClick={handleShare}
+            onClick={() => shareRecipe(recipe)}
             class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors duration-300"
           >
             <Icon name="share" />

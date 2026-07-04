@@ -1,26 +1,23 @@
 import { signal } from "@preact/signals";
-import { profile } from "./profile.js";
 import { saveImage } from "./imageDb.js";
 import { updateRecipe } from "./recipes.js";
+import { openAIRequest } from "../lib/openai.js";
 
 // Track which recipes are currently generating images
 export const generatingImages = signal(new Set());
 
 export async function generateRecipeImage(recipeId, title, description) {
-  const apiKey = profile.value.apiKey;
-  if (!apiKey) return;
+  const req = openAIRequest("images/generations");
+  if (!req) return;
 
   generatingImages.value = new Set([...generatingImages.value, recipeId]);
 
   try {
     const prompt = `Professional food photography of "${title}". ${description || ""} Beautifully plated, natural lighting, shallow depth of field, rustic ceramic plate, warm tones. Editorial food magazine style.`;
 
-    const res = await fetch("https://api.openai.com/v1/images/generations", {
+    const res = await fetch(req.url, {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${apiKey}`,
-      },
+      headers: req.headers,
       body: JSON.stringify({
         model: "gpt-image-1",
         prompt,

@@ -1,5 +1,7 @@
 import { Icon } from "./Icon.jsx";
-import { toggleFavorite, favoriteIds } from "../stores/recipes.js";
+import { toggleFavorite, favoriteIds, removeRecipe } from "../stores/recipes.js";
+import { deleteImage } from "../stores/imageDb.js";
+import { shareRecipe } from "../lib/share.js";
 import { useRecipeImage } from "../hooks/useRecipeImage.js";
 import { generatingImages } from "../stores/imageGen.js";
 
@@ -81,20 +83,45 @@ export function RecipeCard({ recipe, variant = "default" }) {
               )}
             </div>
           )}
-          <button
-            onClick={(e) => {
-              e.preventDefault();
-              e.stopPropagation();
-              toggleFavorite(recipe.id);
-            }}
-            class="absolute top-4 right-4 bg-white/90 p-2 rounded-full shadow-md hover:scale-110 transition-transform"
-          >
-            <Icon
-              name="favorite"
-              filled={isFav}
-              class={isFav ? "text-red-500" : "text-outline"}
-            />
-          </button>
+          <div class="absolute top-4 right-4 flex items-center gap-2">
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                if (confirm("Remove this recipe from your library?")) {
+                  deleteImage(recipe.id).catch(() => {});
+                  removeRecipe(recipe.id);
+                }
+              }}
+              class="bg-white/90 p-2 rounded-full shadow-md hover:scale-110 transition-transform opacity-0 group-hover:opacity-100"
+            >
+              <Icon name="delete" class="text-error" />
+            </button>
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                shareRecipe(recipe);
+              }}
+              class="bg-white/90 p-2 rounded-full shadow-md hover:scale-110 transition-transform opacity-0 group-hover:opacity-100"
+            >
+              <Icon name="share" class="text-primary" />
+            </button>
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                toggleFavorite(recipe.id);
+              }}
+              class="bg-white/90 p-2 rounded-full shadow-md hover:scale-110 transition-transform"
+            >
+              <Icon
+                name="favorite"
+                filled={isFav}
+                class={isFav ? "text-red-500" : "text-outline"}
+              />
+            </button>
+          </div>
           {recipe.aiGenerated && (
             <div class="absolute top-4 left-4 bg-tertiary-container/90 text-on-tertiary-fixed font-bold px-3 py-1 rounded-full text-xs flex items-center gap-1 backdrop-blur-md">
               <Icon name="auto_awesome" filled class="text-xs" />

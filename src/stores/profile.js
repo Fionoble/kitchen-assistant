@@ -21,7 +21,26 @@ const defaultProfile = {
 
 export const profile = signal(loadFromStorage("kitchen-profile", defaultProfile));
 
-export const hasApiKey = computed(() => !!profile.value.apiKey);
+// Republic gateway mode: when a gateway token is set, AI requests are routed
+// through the Republic gateway worker instead of using a bring-your-own key.
+const GATEWAY_TOKEN_KEY = "buddy_gateway_token";
+
+export const gatewayToken = signal(localStorage.getItem(GATEWAY_TOKEN_KEY) || "");
+
+export const isGatewayMode = computed(() => !!gatewayToken.value);
+
+export function setGatewayToken(token) {
+  localStorage.setItem(GATEWAY_TOKEN_KEY, token);
+  gatewayToken.value = token;
+}
+
+export function clearGatewayToken() {
+  localStorage.removeItem(GATEWAY_TOKEN_KEY);
+  gatewayToken.value = "";
+}
+
+// AI is usable with either a gateway token or a personal OpenAI key.
+export const hasApiKey = computed(() => !!gatewayToken.value || !!profile.value.apiKey);
 
 export function updateProfile(updates) {
   profile.value = { ...profile.value, ...updates };
